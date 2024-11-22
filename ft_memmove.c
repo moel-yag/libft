@@ -13,7 +13,7 @@
 #include "libft.h"
 
 static void	ft_move(unsigned char *dest_tmp, const unsigned char *src_tmp,
-			size_t n)
+		size_t n)
 {
 	size_t	i;
 

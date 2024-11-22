@@ -6,15 +6,15 @@
 /*   By: moel-yag <moel-yag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 08:29:38 by moel-yag          #+#    #+#             */
-/*   Updated: 2024/11/18 14:35:18 by moel-yag         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:08:58 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int get_len(int n)
+static int	get_len(int n)
 {
-	int len;
+	int	len;
 
 	len = 1;
 	if (n < 0)
@@ -30,11 +30,11 @@ static int get_len(int n)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	int i;
-	int len;
+	char	*str;
+	int		i;
+	int		len;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));

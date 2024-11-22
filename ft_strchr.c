@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while ((char )c != s[i])
+	while ((char)c != s[i])
 	{
 		if (!s[i])
 			return (NULL);

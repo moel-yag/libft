@@ -6,16 +6,16 @@
 /*   By: moel-yag <moel-yag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:43:23 by moel-yag          #+#    #+#             */
-/*   Updated: 2024/11/18 10:26:58 by moel-yag         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:11:13 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
-		return;
+		return ;
 	while (lst)
 	{
 		f(lst->content);

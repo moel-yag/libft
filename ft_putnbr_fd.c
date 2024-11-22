@@ -6,15 +6,15 @@
 /*   By: moel-yag <moel-yag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:47:11 by moel-yag          #+#    #+#             */
-/*   Updated: 2024/11/16 10:47:17 by moel-yag         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:17:49 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char c;
+	char	c;
 
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);

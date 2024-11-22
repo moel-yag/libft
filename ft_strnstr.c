@@ -6,7 +6,7 @@
 /*   By: moel-yag <moel-yag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:06:13 by moel-yag          #+#    #+#             */
-/*   Updated: 2024/11/03 11:31:18 by moel-yag         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:57:54 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	j = 0;
 	if (needle[0] == '\0')
-		return ((char *) haystack);
-	while (haystack[i] && i < len)
+		return ((char *)haystack);
+	while (i < len && haystack[i])
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && haystack[i + j] && (i + j) < len)
+		while ((i + j) < len && haystack[i + j] == needle[j] && haystack[i + j])
 		{
 			if (needle[j + 1] == '\0')
-				return ((char *) haystack + i);
+				return ((char *)haystack + i);
 			j++;
 		}
 		i++;
@@ -71,5 +71,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 //     char *result5 = ft_strnstr(haystack5, needle5, len5);
 //     printf("Test 5: '%s' -> '%s'\n", haystack5, result5 ? result5 : "NULL");
 
-//     return 0;
+//     return (0);
 // }

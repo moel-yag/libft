@@ -37,3 +37,5 @@ fclean: clean
 	rm -f $(NAME) $(BONUS_O)
 
 re: fclean all
+
+.PHONY : clean fclean re all

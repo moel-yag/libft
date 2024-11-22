@@ -6,13 +6,13 @@
 /*   By: moel-yag <moel-yag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:05:54 by moel-yag          #+#    #+#             */
-/*   Updated: 2024/10/23 14:06:23 by moel-yag         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:47:41 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	ft_free(char **s)
+static void	ft_free(char **s)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ static	void	ft_free(char **s)
 	free(s);
 }
 
-static	int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	count;
 	int	flag;
@@ -45,7 +45,7 @@ static	int	count_word(char const *s, char c)
 	return (count);
 }
 
-static	char	*get_word(char *dst, char const *src, char c, int	*index)
+static char	*get_word(char *dst, char const *src, char c, int *index)
 {
 	int	i;
 	int	start;
@@ -59,6 +59,8 @@ static	char	*get_word(char *dst, char const *src, char c, int	*index)
 		i++;
 	len = (i - start) + 1;
 	dst = ft_calloc(len, sizeof(char));
+	if (!dst)
+		return (NULL);
 	ft_strlcpy(dst, src + start, len);
 	*index = i;
 	return (dst);
@@ -75,7 +77,10 @@ static char	**fill_array(char **dst, char const *src, char c, int number_word)
 	{
 		dst[i] = get_word(dst[i], src, c, &index_word);
 		if (!dst[i])
+		{
 			ft_free(dst);
+			return (NULL);
+		}
 		i++;
 	}
 	return (dst);
